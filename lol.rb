@@ -3,51 +3,35 @@ puts "Welcome to the Laughter Lab!"
 puts "Choose a category and type your choice."
 puts "knock knock joke, mad lib, riddle"
 
-#have user choose One
-
-# assign each joke a number
-# .length to determine how many = n
-# use a random number generator between 0 and n
-# call the joke with that number
-
-
-# have user type answer
-# if type knock knock
-# call a random kkjoke and provide random joke
-# if type mad lib
-# call a mad lib and provide mad lib
-# if type riddle provide riddle
-def game
   games = {}
-  kkjokes = {1=>"a", 2=>"b", 3=>"c"}
-  mlibs = {4=>"d", 5=>"e", 6=>"f"}
-  riddles = {7=>"g", 8=>"h", 9=>"i"}
-  games["knock knock joke"]=kkjokes
-  games["mad lib"]=mlibs
-  games["riddle"]=riddles
+  kkjoke = {0=>"a", 1=>"b", 2=>"c"}
+  mlib = {0=>"d", 1=>"e", 2=>"f"}
+  riddle = {0=>"g", 1=>"h", 2=>"i"}
+  games["knock knock joke"]=kkjoke
+  games["mad lib"]=mlib
+  games["riddle"]=riddle
 
-kkjokes.keys.sample
+ knum = (kkjoke.length)-1
+ mnum = (mlib.length)-1
+ rnum = (riddle.length)-1
 
+# have user choose which they want and randomly give one from that category
 choice = gets.strip.downcase.to_s
- if choice = "knock knock joke"
- puts games[choice][kkjokes.sample]
-end
-puts games[choice]
+  if choice == "knock knock joke"
+   puts games[choice][rand(knum)]
+ elsif choice == "mad lib"
+    puts games[choice][rand(mnum)]
+  elsif choice == "riddle"
+    puts games[choice][rand(rnum)]
+  end
 
-end
-puts game
-#puts "#{choice}"
-# puts
-# def game
-#   if
-#  end
-# end
+  # puts "Knock Knock"
+  # respond = gets.strip
+  # puts "Daisy"
+  # respond2 = gets.strip
+  # puts "Daisy me rollin, they hatin’."
 
-# ask if user wants a joke or to do a mad lib
 
-# intro telling user what to do
-# asks user for certain words
-# puts words into story
 
 # puts "Welcome to MadLibs.
 # Type your own words relating to the categories requested to see your story come to life."
